@@ -1,0 +1,421 @@
+// body{
+//     background: $balck ;
+//         @include bgGradient($blue,$purple,$lightBlue);
+//     height: 200px;
+//     font-size: 50px;
+ 
+//     padding: 50px;
+//     border-radius:20px  ;
+//     -webkit-border-radius:20px;
+//     -moz-border-radius:20px;
+//     -ms-border-radius:20px;
+//     -o-border-radius:20px;
+    
+//     width: 500px;
+//     box-sizing: border-box;
+//     background-blend-mode: darken;
+// }
+
+
+
+
+
+body , h1 ,h2 ,h3 ,p{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    @include container($container , $marginAuto);
+}
+
+// --------------------------------hero_sec----------------------------
+.heroSec{
+    background: $heroSecBgImg;
+    @include bgProperties();
+    
+   .all{
+    background-image: $bgGradient ;
+    width: 100%;
+    position: fixed;
+    .nav{
+        display: $flex;
+        justify-content: space-between;
+        width: 89%;
+        padding: 20px;
+        margin: $marginAuto;
+        
+        ul{
+            list-style: none;
+            display: $flex;
+
+            li:nth-child(8){
+                padding-right: 0;
+             }
+             li{
+               padding-right: $padRight;
+
+               a{
+                text-decoration: none;
+                color: $white;
+             }
+           }
+        }
+    }
+   }
+    .container{
+        @include  grid(1fr 1fr, 20px, end , center);
+        padding-top: 200px;
+    
+    .text{
+        h1{
+            font-size: $h1Font;
+            color: $white;
+            padding-bottom: 25px;
+        }
+        p{
+            color: $white;
+            width: 75%;
+            font-size: $pSmallFont;
+            padding-bottom: 40px;
+        }
+        .btnExplore{
+            @include  btn( $btnPadding , $white , none ,$gray );
+        }
+    }
+  }
+ }
+
+//  --------------------------------------UniqueFeatures_sec-----------------------
+.UniqueFeatures{
+             @include titleSecStyle($paddingSec , $alignCenter);
+   header{
+           h2{
+             @include textProperties($gray , $h2Font , 20px );
+       } 
+           .headText{
+             @include textProperties($lightGray  , $pSmallFont , $padBottom );
+             width : 60%;
+             margin:  $marginAuto;
+       }
+    }
+    .container{
+             @include  grid(1fr 1fr 1fr 1fr, 20px, center , center);
+
+             @for $i from 1 through 4{
+                .box-#{$i}{
+                    padding: $uniquFeatureBox;
+                    text-align: left;
+                    box-shadow: 0 4px 7px  rgba(48, 46, 46 , .4) ;
+                    img{
+                        padding-bottom: $whiteBoxPadding;
+                    }
+                    h3{
+                        @include textProperties($gray , $pFont , 20px );
+                  } 
+                    p{
+                        @include textProperties($lightGray , $pSmallFont ,0 );
+                  }
+                }
+        
+            }
+    }
+}
+// ----------------------------weBelieve_sec---------------------------------
+.weBelieve_sec{
+    background-color: $grayBg;
+    padding: $paddingSec;
+    .container{
+        @include  grid(1fr 1fr, 20px, center , center);
+
+        h2{
+            @include textProperties($gray , $h2Font , 40px );
+      } 
+        p{
+            @include textProperties($lightGray , $pSmallFont ,40px );
+      }
+      button{
+            @include  btn( $btnPadding , none, none,$white );
+            background-image: $bgGradient;
+      }
+    }
+}
+
+.weBelieve_sec2{
+    padding: $paddingSec;
+    .container{
+        @include  grid(1fr 1fr, 20px, center , center);
+
+        h2{
+            @include textProperties($gray , $h2Font , 40px );
+      } 
+        p{
+            @include textProperties($lightGray , $pSmallFont ,40px );
+      }
+      button{
+            @include  btn( $btnPadding , none, none,$white );
+            background-image: $bgGradient;
+      }
+    }
+}
+
+.video_sec{
+    .container{
+        @include  grid(1fr  , 20px, center , center);
+        background-image: $videoImg;
+        height: 450px;
+        margin-bottom: 100px;
+        @include bgProperties() ;
+    }
+}
+
+// ------------------------------price_sec-------------------
+.price_sec{
+    @include titleSecStyle($paddingSec , $alignCenter);
+    background-color: $grayBg ;
+    header{
+        h2{
+          @include textProperties($gray , $h2Font , 20px );
+    } 
+        p{
+          @include textProperties($lightGray  , $pSmallFont , $padBottom );
+          width : 50%;
+          margin:  $marginAuto;
+    }
+ }
+ .container{
+    @include  grid(1fr 1fr 1fr , 20px, center , center);
+
+        .head{
+            display: $flex ;
+            justify-content: space-between;
+            border-bottom: 1px solid $lightGray;
+            padding: $uniquFeatureBox;
+            
+            .secLeft{
+                p:first-child{
+                    @include textProperties($gray , $pFont , 16px );
+                }
+                p{
+                    @include textProperties($lightGray  , $pSmallFont ,0 );
+                }
+            }
+            p{
+                @include textProperties($gray , $h2Font, 0 ); 
+            }
+        }
+        .text{
+            padding: 50px 60px;
+          p{
+          
+            @include textProperties($lightGray , $pSmallFont , 10px);
+          }
+          button{
+              margin: 25px;
+              @include btn( $btnPadding , $grayBg, 1px solid $lightGray ,$gray )
+          }
+        }
+
+    @for $i from 1 through 3{
+       .priceClo-#{$i}{
+           background-color: $white;
+       }
+    }
+ }
+}
+
+// -----------------------------------Screenshots_sec-----------------------
+.Screenshots_sec{
+    @include titleSecStyle($paddingSec , $alignCenter);
+    header{
+        h2{
+          @include textProperties($gray , $h2Font , 20px );
+    } 
+        p{
+          @include textProperties($lightGray  , $pSmallFont , $padBottom );
+          width : 50%;
+          margin:  $marginAuto;
+    }
+ }
+}
+ .container{
+    @include  grid(1fr 1fr 1fr 1fr, 20px, center , center);
+ }
+//  ---------------------------------Testimonials_sec---------------------------
+.Testimonials_sec{
+    @include titleSecStyle($paddingSec , $alignCenter);
+    background-color: $grayBg;
+    header{
+        h2{
+          @include textProperties($gray , $h2Font , 20px );
+    } 
+        p{
+          @include textProperties($lightGray  , $pSmallFont , $padBottom );
+          width : 50%;
+          margin:  $marginAuto;
+    }
+ }
+    .container{
+        @include  grid(1fr 1fr  , 20px, center , center);
+        
+        @for $i from 1 through 2{
+            .sec-#{$i}{
+                display: $flex ;
+                background-color: $white;
+                padding: 40px;
+            }
+            .p-#{$i}{
+                @include textProperties($lightGray  , $pSmallFont , 10px ); 
+                text-align: left;
+            }
+        }
+        img{
+            height: 100%;
+            padding-right: 25px;
+        }
+        p{
+            @include textProperties($gray , $pFont , 10px );  
+            text-align: left;
+        }
+    }
+}
+// ---------------------------download_sec--------------------------
+.download_sec{
+    background-image: $bgGradient;
+    @include titleSecStyle($paddingSec , $alignCenter);
+      header{
+        h2{
+            @include textProperties($white , $h2Font , 25px );  
+        }
+        p{
+            width: 65%;
+            margin: $marginAuto;
+            @include textProperties($white  , $pSmallFont , 40px ); 
+        }
+    }
+    .appStore{
+        display: $flex;
+       justify-content: center;
+        .Available{
+            display: $flex;
+            @include btn( $btnStorPadding, none, 1px solid $white ,$white );
+            margin-right: 20px;
+            i{
+                font-size: $h2Font;
+                padding-right: 20px;
+            }
+            p{
+                text-align: left;
+            }
+        }
+    }
+}
+// ----------------------------LatestNews_sec---------------------------------------------
+.LatestNews_sec{
+    @include titleSecStyle($paddingSec , $alignCenter);
+    header{
+        h2{
+            @include textProperties($gray , $h2Font , 25px );  
+        }
+        p{
+            width: 65%;
+            margin: $marginAuto;
+            @include textProperties($lightGray  , $pSmallFont ,  $padBottom ); 
+        }
+    }
+    .container{
+        @include  grid(1fr 1fr 1fr , 20px, center , center);
+        
+        @for $i from 1 to 4 {
+            .interactionBox-#{$i} {
+                background-color: $grayBg ;
+                text-align: left;
+                padding: 60px 30px;
+                p:nth-child(3){
+                    @include textProperties($lightGray ,15px , 25px );  
+                }
+                .actions{
+                    display: $flex;
+                    color: $lightGray;
+                    div{
+                        padding-right: 20px;
+                    }
+                }
+            }
+            .date-#{$i} {
+                @include btn( 8px 18px , $white, 1px solid $lightGray ,$lightGray ) ;
+                width: 28%;
+                margin-bottom: 30px;
+            }
+            .title-#{$i} {
+                @include textProperties($gray ,$pFont , 25px );  
+            }
+        }
+    }
+}
+// ---------------------------footer--------------------
+.footer{
+    background-color: $gray ;
+    color: $white;
+    @include titleSecStyle($paddingSec , $alignCenter);
+    .container{
+        @include  grid(1fr 2fr 1fr , 20px, center , center);
+      align-items: start;
+      padding-bottom: 30px;
+        div{
+            text-align: left;
+            h3{
+                padding-bottom: 40px;
+            }
+            p{
+                padding-bottom: 10px;
+            }
+            ul{
+                list-style: none;
+                display: $flex;
+                margin: 0;
+                font-size: 0;
+                padding-left: 0;
+                li{
+                    padding: 5px;
+                }
+                
+            }
+            .btns{
+                position: relative;
+               .email-btn{
+                   padding: 10px;
+                   width: 350px;
+                   text-align: left;
+                   background-color:$white;
+                   border: none;
+                   border-radius: 50px;
+                }
+            .submit-btn{
+               padding: 10px 35px;
+               text-align: center;
+               background-image:$bgGradient;
+               position: absolute;
+               border: none;
+               border-radius: 50px;
+               right: 0px;
+               color: $white;
+            }
+            }
+        }
+    }
+    .c-right{
+        display: flex;
+        justify-content: space-around;
+        .logos{
+            i{
+                padding: 5px;
+                background-color: black;
+                color: $white;
+            }
+        }
+        span{
+            color: $darkBlue,
+        }
+    }
+ }

@@ -1,0 +1,76 @@
+// @mixin bgGradient($blue , $purple ,$lightBlue) {
+//     background: linear-gradient(to left, $blue , $purple,$lightBlue);  // gradient(left, rgba(30,87,153,1) 0%,rgba(176,48,254,1) 0%,rgba(117,72,251,1) 100%);
+// }
+
+// @mixin  navBar( $padRight , $white ,  $flex ) {
+
+//     padding-right: $padRight;
+//     color:$white ;
+//     display: $flex;
+// }
+
+@mixin container($container , $marginAuto) {
+    width: $container;
+    margin: $marginAuto;
+}
+
+@mixin grid($colNo , $gap , $alignHorizontal , $alignVertical) {
+    display:grid;
+    grid-template-columns:$colNo;
+    grid-gap: $gap;
+    justify-items: $alignHorizontal;
+    align-items: $alignVertical;    
+
+}
+
+@mixin bgProperties() {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+// %bgProperties {
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//  
+// }
+
+@mixin btn( $btnPadding , $bgColor, $border ,$fontColor ) {
+    padding: $btnPadding;
+    background-color: $bgColor;
+    border: $border;
+    text-align: $alignCenter;
+    border-radius: $borderRedius ;
+    color: $fontColor;
+}
+
+@mixin textProperties($fontColor , $fontProperties , $padBottom ) {
+    color: $fontColor;
+    font-size: $fontProperties;
+    padding-bottom: $padBottom;
+}
+
+@mixin  titleSecStyle($paddingSec , $alignCenter) {
+    padding: $paddingSec;
+    text-align: $alignCenter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@for $i from 1 through 4{
+  
+    .featureImg#{$i}{
+        background:url("../img/feature/feature-#{$i}.jpg");
+        // @extend %bgProperties;  
+        @include bgProperties();
+    }
+}

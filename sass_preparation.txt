@@ -1,0 +1,40 @@
+Firstly, to use sass in your project you should install an environment to work with sass and compile it,
+one of the most common ways is to use gulp in sass compilation,
+
+## using gulp for sass:
+
+1- check you have nodejs & npm on your machine:
+==>> open your command screen and run < node -v && npm >
+2- this will display the versions of node & npm on your machine
+3- if you don't have node on your machine it will display this command not found
+4- go to nodjs.org and download & install latest stable version on nodejs
+5- once the download and installation have been finished 
+===>> open your command screen and run again < node -v & npm -v >
+6- now you can install gulp using npm command
+===>> in the command screen run < npm install gulp -g >
+this will download & install gulp globally on your machine but not specifically in a specific project 
+7- if you will start a project you can do one of two things 
+---7.1- install gulp locally in your project folder as the following
+======>> open command screen inside your project folder and run 
+< npm install gulp --save-dev >
+this will install gulp locally inside your project and will define it as a command you can use it inside your project
+---7.2- define gulp command loacally in your package.json file 
+
+Now you have installed nodejs, npm on your machine 
+and you have installed gulp even on your machine or inside your project locally based on your choice from above steps
+
+
+### for gulp installation
+1- after you have installed gulp check the package you need for sass 
+2- you will find a most recommended package for sass called (gulp-sass)
+3- open command screen inside your project folder, then run 
+===>> < npm install gulp-sass --save-dev >
+4- create a "gulpfile.js" in your project folder root 
+5- start create your gulpfile scripts to build the sass compile task 
+you can find an example in the gulp-sass doc page
+< https://www.npmjs.com/package/gulp-sass >
+
+### once you finished "gulpfile.js" open command screen in your project folder
+you can run the sass task compilation by run the command
+< gulp SASS_TASK_NAME > // SASS_TASK_NAME is the task name in your "gulpfile.js"
+
